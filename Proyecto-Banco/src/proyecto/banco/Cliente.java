@@ -1,7 +1,6 @@
-
 package proyecto.banco;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.List;
 
 public class Cliente {
     private String idCliente;
@@ -10,22 +9,26 @@ public class Cliente {
     private String direccion;
     private int telefono;
     private int dni;
-    private ArrayList<CuentaBancaria> cuentas;
-    private ArrayList<EventoBancario> eventosBancarios;
+    private List<CuentaBancaria> cuentas = new ArrayList<>();
+    private List<EventoBancario> eventoBancarios = new ArrayList();
 
-    // Constructor
-    public Cliente(String idCliente, String nombre, String apellido, String direccion, int telefono, int dni) {
+    public Cliente(String idCliente) {
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
         this.telefono = telefono;
         this.dni = dni;
-        this.cuentas = new ArrayList<>();
-        this.eventosBancarios = new ArrayList<>();
+    }
+  
+    public void addCuenta(CuentaBancaria cuenta) {
+        cuentas.add(cuenta);
     }
 
-    // Getters y setters
+    public void addEventoBancario(EventoBancario evento) {
+        eventoBancarios.add(evento);
+    }
+
     public String getIdCliente() {
         return idCliente;
     }
@@ -74,35 +77,17 @@ public class Cliente {
         this.dni = dni;
     }
 
-    public ArrayList<CuentaBancaria> getCuentas() {
+    public List<CuentaBancaria> getCuentas() {
         return cuentas;
     }
 
-    public void setCuentas(ArrayList<CuentaBancaria> cuentas) {
-        this.cuentas = cuentas;
-    }
-
-    // Método para agregar una cuenta a la lista de cuentas del cliente
-    public void agregarCuenta(CuentaBancaria cuenta) {
-        cuentas.add(cuenta);
-    }
-
-    public ArrayList<EventoBancario> getEventosBancarios() {
-        return eventosBancarios;
-    }
-
-    public void setEventosBancarios(ArrayList<EventoBancario> eventosBancarios) {
-        this.eventosBancarios = eventosBancarios;
+    public List<EventoBancario> getEventoBancarios() {
+        return eventoBancarios;
     }
 
     @Override
     public String toString() {
-        return "Cliente [ID: " + idCliente +
-               ", Nombre: " + nombre +
-               ", Apellido: " + apellido +
-               ", Dirección: " + direccion +
-               ", Teléfono: " + telefono +
-               ", DNI: " + dni + "]";
+        return "Cliente [idCliente=" + idCliente + ", nombre=" + nombre + ", apellido=" + apellido + ", direccion="
+                + direccion + ", telefono=" + telefono + ", dni=" + dni + "]";
     }
 }
-

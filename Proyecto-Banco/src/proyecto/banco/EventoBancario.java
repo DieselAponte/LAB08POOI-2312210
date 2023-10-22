@@ -1,21 +1,18 @@
-
 package proyecto.banco;
 
 import java.util.Date;
 
-class EventoBancario {
+public class EventoBancario {
     private Date fecha;
     private String tituloEvento;
     private String descripcionEvento;
 
-    // Constructor
     public EventoBancario(Date fecha, String tituloEvento, String descripcionEvento) {
         this.fecha = fecha;
         this.tituloEvento = tituloEvento;
         this.descripcionEvento = descripcionEvento;
     }
 
-    // Getters y setters
     public Date getFecha() {
         return fecha;
     }
@@ -42,8 +39,7 @@ class EventoBancario {
 
     @Override
     public String toString() {
-        return "EventoBancario [Fecha: " + fecha +
-               ", Título del Evento: " + tituloEvento +
-               ", Descripción del Evento: " + descripcionEvento + "]";
+        return "EventoBancario [fecha=" + fecha + ", tituloEvento=" + tituloEvento + ", descripcionEvento="
+                + descripcionEvento + "]";
     }
 }
