@@ -15,5 +15,31 @@ public class MovimientoCuenta {
         this.fecha = fecha;
         this.importe = importe;
         this.tipoOperacion = tipoOperacion;
-    
+    }
+
+    public String getNumOperacion() {
+        return numOperacion;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public double getImporte() {
+        return importe;
+    }
+
+    public String getTipoOperacion() {
+        return tipoOperacion;
+    }
+
+    @Override
+    public String toString() {
+        return "MovimientoCuenta [numOperacion=" + numOperacion + ", descripcion=" + descripcion + ", fecha=" + fecha
+                + ", importe=" + importe + ", tipoOperacion=" + tipoOperacion + "]";
+    }
 }
