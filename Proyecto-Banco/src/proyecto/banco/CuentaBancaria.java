@@ -53,12 +53,12 @@ public class CuentaBancaria {
         return saldoDisponible;
     }
 
-    public void setSaldoDisponible(double saldoDisponible) {
-        this.saldoDisponible = saldoDisponible;
-    }
-
     public List<MovimientoCuenta> getMovimientos() {
         return movimientos;
+    }
+    
+    public void setSaldoDisponible(double saldoDisponible) {
+        this.saldoDisponible = saldoDisponible;
     }
 
     @Override
