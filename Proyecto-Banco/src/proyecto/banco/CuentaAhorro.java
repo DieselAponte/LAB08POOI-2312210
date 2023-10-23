@@ -1,23 +1,13 @@
-
 package proyecto.banco;
 
 public class CuentaAhorro extends CuentaBancaria {
-    private double tasaInteresAnual = 0.03; 
+    private double tasaInteresAnual = 0.03;
     private String[] beneficios;
 
-    public CuentaAhorro(String numeroCuenta, String descripcionCuenta, String cuentaCCI, Cliente cliente,
-                        double tasaInteresAnual, String[] beneficios) {
-        super(numeroCuenta, descripcionCuenta, cuentaCCI, cliente);
+    public CuentaAhorro(double tasaInteresAnual, String[] beneficios) {
+        super("NumeroCuenta", "DescripcionCuenta", "CuentaCCI", new Cliente("idCliente"));
         this.tasaInteresAnual = tasaInteresAnual;
         this.beneficios = beneficios;
-    }
-
-    public double getTasaInteresAnual() {
-        return tasaInteresAnual;
-    }
-
-    public void setTasaInteresAnual(double tasaInteresAnual) {
-        this.tasaInteresAnual = tasaInteresAnual;
     }
 
     public String[] getBeneficios() {
@@ -28,19 +18,14 @@ public class CuentaAhorro extends CuentaBancaria {
         this.beneficios = beneficios;
     }
 
-    @Override
+    
     public void calcularInteresMensual() {
-        // Implementa el cálculo de intereses para una cuenta de ahorro aquí
+        double interesMensual = (getSaldoDisponible() * tasaInteresAnual) / 12;
+        setSaldoDisponible(getSaldoDisponible() + interesMensual);
     }
 
     @Override
     public String toString() {
-        return "Cuenta de Ahorro [Número de Cuenta: " + getNumeroCuenta() +
-               ", Descripción: " + getDescripcionCuenta() +
-               ", Cuenta CCI: " + getCuentaCCI() +
-               ", Saldo Disponible: " + getSaldoDisponible() +
-               ", Tasa de Interés Anual: " + tasaInteresAnual +
-               ", Beneficios: " + java.util.Arrays.toString(beneficios) +
-               ", Estado: " + getEstado() + "]";
+        return "CuentaAhorro [tasaInteresAnual=" + tasaInteresAnual + ", beneficios=" + beneficios + "]";
     }
 }
