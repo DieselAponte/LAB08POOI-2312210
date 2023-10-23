@@ -27,4 +27,3 @@ package proyecto.banco;
         return "CuentaCTS [tasaInteresAnual=" + tasaInteresAnual + ", puntos=" + puntos + "]";
     }
 }
-.
