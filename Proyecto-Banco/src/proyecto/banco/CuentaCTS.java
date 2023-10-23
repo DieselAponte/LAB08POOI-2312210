@@ -1,16 +1,11 @@
 package proyecto.banco;
-
-public class CuentaCTS extends CuentaBancaria {
-    private double tasaInteresAnual = 0.07; // 7%
+ public class CuentaCTS extends CuentaBancaria {
+    private double tasaInteresAnual = 0.07;
     private double puntos;
 
-    public CuentaCTS(String numeroCuenta, String descripcionCuenta, String cuentaCCI, Cliente cliente, double puntos) {
-        super(numeroCuenta, descripcionCuenta, cuentaCCI, cliente);
+    public CuentaCTS(double puntos) {
+        super("NumeroCuenta", "DescripcionCuenta", "CuentaCCI", new Cliente("idCliente"));
         this.puntos = puntos;
-    }
-
-    public double getTasaInteresAnual() {
-        return tasaInteresAnual;
     }
 
     public double getPuntos() {
@@ -21,19 +16,14 @@ public class CuentaCTS extends CuentaBancaria {
         this.puntos = puntos;
     }
 
-    @Override
+   
     public void calcularInteresMensual() {
-        // Implementa el cálculo de intereses para una cuenta CTS aquí
+        double interesMensual = (getSaldoDisponible() * tasaInteresAnual) / 12;
+        setSaldoDisponible(getSaldoDisponible() + interesMensual);
     }
 
     @Override
     public String toString() {
-        return "Cuenta CTS [Número de Cuenta: " + getNumeroCuenta() +
-               ", Descripción: " + getDescripcionCuenta() +
-               ", Cuenta CCI: " + getCuentaCCI() +
-               ", Saldo Disponible: " + getSaldoDisponible() +
-               ", Tasa de Interés Anual: " + tasaInteresAnual +
-               ", Puntos: " + puntos +
-               ", Estado: " + getEstado() + "]";
+        return "CuentaCTS [tasaInteresAnual=" + tasaInteresAnual + ", puntos=" + puntos + "]";
     }
 }
