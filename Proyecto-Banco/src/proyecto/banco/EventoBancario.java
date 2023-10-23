@@ -36,7 +36,7 @@ public class EventoBancario {
     public void setDescripcionEvento(String descripcionEvento) {
         this.descripcionEvento = descripcionEvento;
     }
-
+//asdasd
     @Override
     public String toString() {
         return "EventoBancario [fecha=" + fecha + ", tituloEvento=" + tituloEvento + ", descripcionEvento="

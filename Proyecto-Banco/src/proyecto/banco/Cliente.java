@@ -20,7 +20,7 @@ public class Cliente {
         this.telefono = telefono;
         this.dni = dni;
     }
-  
+  //asd
     public void addCuenta(CuentaBancaria cuenta) {
         cuentas.add(cuenta);
     }
@@ -32,7 +32,7 @@ public class Cliente {
     public String getIdCliente() {
         return idCliente;
     }
-
+//metodos
     public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
